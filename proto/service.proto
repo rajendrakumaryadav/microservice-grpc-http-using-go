@@ -1,0 +1,17 @@
+syntax = "proto3";
+package service;
+
+option go_package = "grpcservices/proto;service";
+
+service DataService {
+  rpc StoreData(Data) returns (Response);
+}
+
+message Data {
+  string id = 1;
+  string content = 2;
+}
+
+message Response {
+  bool success = 1;
+}
